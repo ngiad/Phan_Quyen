@@ -16,8 +16,10 @@ export const Login = (req,res) =>{
 }
 
 export const Register = async(req,res) =>{
+    const { username } = req.body
     try {
         const User = await UserModel.findOne({username})
+        console.log(User);
         const token = signJWT({username : User.username},"login")
         res.json({token}).status(200)
     } catch (error) {

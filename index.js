@@ -7,7 +7,7 @@ import UserRouter from "./src/Router/UserRouter.js";
 const app = express()
 const URL = "mongodb+srv://Ngiad:Ngiad001@cluster0.2ts8aja.mongodb.net"
 app.use(cors())
-app.use(bodyParser.json)
+app.use(bodyParser.json())
 
 app.use("/login",UserRouter)
 

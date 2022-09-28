@@ -19,7 +19,7 @@ export const RegisterMidlleware =  async(req,res,next) =>{
     const { username } = req.body
     try {
         const user = await UserModel.find({username})
-        if(user){
+        if(user.username){
             return res.status(500).json({false : false})
         }else{
             const user = req.body
